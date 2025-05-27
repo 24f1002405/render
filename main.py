@@ -4,4 +4,6 @@ app = FastAPI()
 
 @app.get('/')
 def index():
-    return {'msg': "Hello World"}
+    with open('data', 'r') as f:
+        msg = f.read()
+    return {'msg': msg}
